@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name         Auto Click CONTINUE on Sarathi Page
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Automatically click the CONTINUE button on the Sarathi authentication page
+// @match        https://sarathi.parivahan.gov.in/sarathiservice/authenticationaction.do*
+// @match        https://sarathi.parivahan.gov.in/sarathiservice/authenticationaction.do*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    function clickContinueButton() {
+        const button = document.querySelector('input[type="submit"][value="CONTINUE"]');
+        if (button) {
+            console.log("CONTINUE button found. Clicking...");
+            button.click();
+        } else {
+            console.log("CONTINUE button not found. Retrying...");
+            setTimeout(clickContinueButton, 500); // Retry every 500ms if not found yet
+        }
+    }
+
+    // Run the function once DOM is ready
+    window.addEventListener('load', function () {
+        setTimeout(clickContinueButton, 300); // Slight delay after page load
+    });
+})();
