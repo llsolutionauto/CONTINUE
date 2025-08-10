@@ -3,6 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Automatically click the CONTINUE button on the Sarathi authentication page
+// @match        https://sarathi.parivahan.gov.in/sarathiservice*
 // @match        https://sarathi.parivahan.gov.in/sarathiservice/authenticationaction.do*
 // @match        https://sarathi.parivahan.gov.in/sarathiservice/authenticationaction.do*
 // @grant        none
